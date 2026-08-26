@@ -5,6 +5,10 @@
   align-items: start;
 }
 
+.about__grid > * {
+  min-width: 0;
+}
+
 .about__text p {
   color: var(--text-muted);
   font-size: 1.05rem;
