@@ -1,0 +1,46 @@
+.status-widget {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  background: var(--bg-card);
+  border: 1px solid var(--bg-border);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  pointer-events: none;
+  transition: border-color 0.3s;
+}
+
+.status-widget:hover {
+  border-color: rgba(0, 255, 136, 0.25);
+}
+
+.status-widget__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  animation: status-pulse 2.5s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes status-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.5); }
+  50%       { box-shadow: 0 0 0 5px rgba(0, 255, 136, 0); }
+}
+
+.status-widget__text {
+  color: var(--green);
+}
+
+@media (max-width: 640px) {
+  .status-widget {
+    display: none;
+  }
+}

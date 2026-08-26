@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg: #0a0e1a;
+  --bg-card: #0f1629;
+  --bg-border: #1a2444;
+  --cyan: #00d4ff;
+  --green: #00ff88;
+  --text: #cdd6f4;
+  --text-muted: #6c7a9c;
+  --text-dim: #3d4f6e;
+  --mono: 'JetBrains Mono', monospace;
+  --sans: 'Inter', system-ui, sans-serif;
+  --glow-cyan: 0 0 24px rgba(0, 212, 255, 0.2);
+  --glow-green: 0 0 24px rgba(0, 255, 136, 0.15);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(0, 212, 255, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 100%, rgba(0, 255, 136, 0.04) 0%, transparent 50%);
+}
+
+a {
+  color: var(--cyan);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--green);
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--bg-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-dim); }
+
+section {
+  padding: 5rem 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-label {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--cyan);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  opacity: 0.8;
+}
+
+.section-label::before {
+  content: '// ';
+  color: var(--text-dim);
+}
+
+.section-title {
+  font-family: var(--mono);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bg-border);
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  border-color: rgba(0, 212, 255, 0.3);
+  box-shadow: var(--glow-cyan);
+}
+
+/* Scroll animations */
+.animate-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.animate-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

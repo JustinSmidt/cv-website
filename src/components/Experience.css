@@ -1,0 +1,157 @@
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.timeline__item {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.timeline__marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  padding-top: 0.35rem;
+}
+
+.timeline__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
+  flex-shrink: 0;
+}
+
+.timeline__line {
+  width: 1px;
+  flex: 1;
+  min-height: 2rem;
+  background: linear-gradient(to bottom, var(--cyan), var(--bg-border));
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.timeline__card {
+  flex: 1;
+  margin-bottom: 2rem;
+}
+
+.timeline__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.timeline__role {
+  font-family: var(--mono);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
+.timeline__company {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--cyan);
+}
+
+.timeline__client {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+.timeline__period {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.timeline__duration {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--green);
+  margin-bottom: 0.15rem;
+}
+
+.timeline__dates {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.timeline__bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.timeline__bullet {
+  display: flex;
+  gap: 0.75rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.timeline__bullet-icon {
+  color: var(--cyan);
+  flex-shrink: 0;
+  margin-top: 0.05rem;
+}
+
+.timeline__projects {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.timeline__project {
+  border-left: 2px solid var(--bg-border);
+  padding-left: 1rem;
+}
+
+.timeline__project-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.timeline__project-name {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.timeline__project-tag {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--cyan);
+  background: rgba(0, 212, 255, 0.08);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 4px;
+  padding: 0.15rem 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .timeline__header {
+    flex-direction: column;
+  }
+
+  .timeline__period {
+    text-align: left;
+  }
+}

@@ -1,0 +1,22 @@
+.footer {
+  border-top: 1px solid var(--bg-border);
+  padding: 2rem 0;
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.footer__prompt {
+  color: var(--cyan);
+  opacity: 0.5;
+}
+
+.footer__built {
+  color: var(--text-dim);
+}

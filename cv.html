@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Justin Smidt — CV</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-size: 10.5pt;
+      color: #1a1a1a;
+      background: #fff;
+      line-height: 1.5;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      padding: 16mm 18mm 16mm 18mm;
+      margin: 0 auto;
+    }
+
+    /* ── Header ── */
+    .header {
+      display: flex;
+      gap: 14px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 12px;
+      margin-bottom: 18px;
+    }
+
+    .header-bar {
+      width: 4px;
+      align-self: stretch;
+      background: #1d4ed8;
+      border-radius: 2px;
+    }
+
+    .header-main {
+      flex: 1;
+    }
+
+    .header h1 {
+      font-size: 23pt;
+      font-weight: 700;
+      color: #0f172a;
+      letter-spacing: -0.4px;
+    }
+
+    .header .title {
+      font-size: 11pt;
+      color: #1d4ed8;
+      font-weight: 600;
+      margin-top: 3px;
+    }
+
+    .header .meta {
+      display: flex;
+      gap: 20px;
+      margin-top: 7px;
+      font-size: 9pt;
+      color: #475569;
+    }
+
+    .header .meta span::before {
+      margin-right: 4px;
+    }
+
+    /* ── Sections ── */
+    .section {
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      position: relative;
+      font-size: 9.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.9px;
+      color: #1d4ed8;
+      padding-bottom: 7px;
+      margin-bottom: 11px;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 26px;
+      height: 3px;
+      border-radius: 2px;
+      background: #1d4ed8;
+    }
+
+    /* ── About ── */
+    .about-text {
+      color: #334155;
+      font-size: 10pt;
+    }
+
+    /* ── Experience ── */
+    .job {
+      margin-bottom: 14px;
+      padding-top: 12px;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .job:first-child {
+      padding-top: 0;
+    }
+
+    .job + .job {
+      border-top: 1px solid #eef2f7;
+    }
+
+    .job:last-child {
+      margin-bottom: 0;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .job-role {
+      font-weight: 700;
+      font-size: 10.5pt;
+      color: #0f172a;
+    }
+
+    .job-period {
+      font-size: 9pt;
+      color: #64748b;
+      white-space: nowrap;
+    }
+
+    .job-company {
+      font-size: 9.5pt;
+      color: #475569;
+      margin-top: 1px;
+    }
+
+    .job-company .client {
+      color: #94a3b8;
+      font-style: italic;
+    }
+
+    .bullets {
+      margin-top: 5px;
+      padding-left: 14px;
+    }
+
+    .bullets li {
+      margin-bottom: 3px;
+      color: #334155;
+      font-size: 10pt;
+    }
+
+    .project {
+      margin-top: 7px;
+      padding-left: 10px;
+      border-left: 2px solid #dbeafe;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .project-name {
+      font-weight: 600;
+      font-size: 10pt;
+      color: #1e40af;
+    }
+
+    .project-tag {
+      display: inline-block;
+      font-size: 8pt;
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+      border-radius: 3px;
+      padding: 0 5px;
+      margin-left: 6px;
+      vertical-align: middle;
+      line-height: 1.6;
+    }
+
+    /* ── Education ── */
+    .edu-entry {
+      margin-bottom: 8px;
+    }
+
+    .edu-entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .edu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .edu-qual {
+      font-weight: 700;
+      font-size: 10.5pt;
+      color: #0f172a;
+    }
+
+    .edu-period {
+      font-size: 9pt;
+      color: #64748b;
+    }
+
+    .edu-institution {
+      font-size: 9.5pt;
+      color: #475569;
+      margin-top: 1px;
+    }
+
+    .edu-note {
+      display: inline-block;
+      margin-top: 3px;
+      font-size: 9pt;
+      color: #1d4ed8;
+      font-weight: 600;
+    }
+
+    /* ── Skills ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 24px;
+    }
+
+    .skill-cat {
+      font-weight: 700;
+      font-size: 9.5pt;
+      color: #0f172a;
+      margin-bottom: 3px;
+    }
+
+    .skill-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .skill-tag {
+      font-size: 8.5pt;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 3px;
+      padding: 1px 6px;
+      color: #334155;
+    }
+
+    @media print {
+      body { background: white; }
+      .page { padding: 12mm 15mm; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-bar"></div>
+    <div class="header-main">
+      <h1>Justin Smidt</h1>
+      <div class="title">DevOps &amp; Cloud Engineer</div>
+      <div class="meta">
+        <span>073 905 3934</span>
+        <span>jus.smidt@gmail.com</span>
+        <span>South Africa</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- About -->
+  <div class="section">
+    <div class="section-title">Profile</div>
+    <p class="about-text">
+      DevOps and Cloud Engineer with hands-on experience building a cloud platform from the ground up on Azure AKS
+      — networking, managed data stores, CI/CD, and production operations — alongside experience maintaining
+      production workloads on AWS EKS. Backed by a software engineering foundation, I approach infrastructure with
+      an emphasis on automation, version control, and systems that stay reliable under pressure.
+    </p>
+  </div>
+
+  <!-- Experience -->
+  <div class="section">
+    <div class="section-title">Experience</div>
+
+    <!-- Role 1 -->
+    <div class="job">
+      <div class="job-header">
+        <span class="job-role">DevOps &amp; Cloud Engineer</span>
+        <span class="job-period">Feb 2025 – Present</span>
+      </div>
+      <div class="job-company">S-Squared Software Development &nbsp;<span class="client">· Client: Blulabel Telecoms</span></div>
+
+      <div class="project">
+        <span class="project-name">Unipay</span>
+        <span class="project-tag">Azure AKS</span>
+        <ul class="bullets">
+          <li>Sole infrastructure engineer responsible for building dev, QA, and production environments entirely from scratch on Azure AKS using Terraform.</li>
+          <li>Designed and provisioned VNets, subnets, and NSGs to establish the underlying network foundation for each AKS environment.</li>
+          <li>Set up multiple managed databases with private endpoint access enforced via jumpbox.</li>
+          <li>Deployed and configured Redis (caching) and RabbitMQ (message brokering) as supporting platform services.</li>
+          <li>Implemented Nginx ingress controller, provisioned DNS A-records, and authored ingress manifests for all workloads across all three environments.</li>
+          <li>Built and maintained CI/CD pipelines and Helm charts for approximately 20 microservices deployed across the platform.</li>
+        </ul>
+      </div>
+
+      <div class="project">
+        <span class="project-name">Ticketpro</span>
+        <span class="project-tag">AWS EKS</span>
+        <ul class="bullets">
+          <li>Maintained the production Kubernetes environment on AWS EKS, covering cluster health, workload deployments, and incident response.</li>
+        </ul>
+      </div>
+
+      <div class="project">
+        <span class="project-name">Additional Blulabel Projects</span>
+        <span class="project-tag">AWS · Azure · On-Premises</span>
+        <ul class="bullets">
+          <li>Contribute across a broader portfolio of Blulabel projects spanning AWS, Azure, and on-premises environments, with all repositories and pipelines hosted on Azure DevOps.</li>
+          <li>Maintain and troubleshoot existing CI/CD pipelines across these environments, diagnosing and resolving build and deployment issues on infrastructure originally provisioned by other teams.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Role 2 -->
+    <div class="job">
+      <div class="job-header">
+        <span class="job-role">Junior Software Developer</span>
+        <span class="job-period">Mar 2024 – Feb 2025</span>
+      </div>
+      <div class="job-company">S-Squared Software Development</div>
+      <ul class="bullets">
+        <li>Placed on the Interface project, a bespoke solution developed for Alexander Forbes, working alongside a senior developer.</li>
+        <li>Developed backend services and REST APIs in Java and contributed to the AngularJS frontend.</li>
+        <li>Participated in code reviews, sprint planning, and feature delivery across the full development cycle.</li>
+      </ul>
+    </div>
+
+    <!-- Role 3 -->
+    <div class="job">
+      <div class="job-header">
+        <span class="job-role">Intern Software Developer</span>
+        <span class="job-period">Nov 2023 – Mar 2024</span>
+      </div>
+      <div class="job-company">S-Squared Software Development</div>
+      <ul class="bullets">
+        <li>Performed manual and functional testing on the BluAdvance project.</li>
+        <li>Documented bugs, tracked issues, and collaborated with developers to verify fixes.</li>
+        <li>Gained hands-on exposure to the software development lifecycle in a professional environment.</li>
+      </ul>
+    </div>
+
+    <!-- Role 4 -->
+    <div class="job">
+      <div class="job-header">
+        <span class="job-role">Marketing Graduate Program</span>
+        <span class="job-period">2019</span>
+      </div>
+      <div class="job-company">MacDonald's Transport, Kwazulu-Natal</div>
+      <ul class="bullets">
+        <li>Rotated across Sales &amp; Marketing, Logistics, and Operations departments to gain exposure to the full organization.</li>
+        <li>Conducted customer site visits to understand customer-specific requirements and appropriate solutions.</li>
+        <li>Oversaw port activities for incoming vessels and supported warehouse layout and stock management.</li>
+        <li>Coordinated yard activities for receiving and storing goods.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Education -->
+  <div class="section">
+    <div class="section-title">Education</div>
+    <div class="edu-entry">
+      <div class="edu-header">
+        <span class="edu-qual">Bachelor of Computing (Honours) — NQF Level 8</span>
+        <span class="edu-period">2020 – 2023</span>
+      </div>
+      <div class="edu-institution">Belgium Campus ITversity</div>
+      <span class="edu-note">Magna Cum Laude</span>
+    </div>
+    <div class="edu-entry">
+      <div class="edu-header">
+        <span class="edu-qual">Bachelor of Commerce: Marketing Management</span>
+        <span class="edu-period">2015 – 2018</span>
+      </div>
+      <div class="edu-institution">North-West University</div>
+    </div>
+  </div>
+
+  <!-- Skills -->
+  <div class="section">
+    <div class="section-title">Skills</div>
+    <div class="skills-grid">
+
+      <div>
+        <div class="skill-cat">Cloud &amp; Infrastructure</div>
+        <div class="skill-items">
+          <span class="skill-tag">AWS</span>
+          <span class="skill-tag">Azure</span>
+          <span class="skill-tag">EKS</span>
+          <span class="skill-tag">AKS</span>
+          <span class="skill-tag">VNets</span>
+          <span class="skill-tag">Subnets</span>
+          <span class="skill-tag">DNS</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="skill-cat">IaC &amp; Orchestration</div>
+        <div class="skill-items">
+          <span class="skill-tag">Terraform</span>
+          <span class="skill-tag">Kubernetes</span>
+          <span class="skill-tag">Helm</span>
+          <span class="skill-tag">Docker</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="skill-cat">CI/CD &amp; Automation</div>
+        <div class="skill-items">
+          <span class="skill-tag">CI/CD Pipelines</span>
+          <span class="skill-tag">Nginx</span>
+          <span class="skill-tag">Redis</span>
+          <span class="skill-tag">RabbitMQ</span>
+          <span class="skill-tag">Bash</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="skill-cat">Development</div>
+        <div class="skill-items">
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">AngularJS</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">SQL</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
