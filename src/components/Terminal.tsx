@@ -9,9 +9,9 @@ const COMMANDS: Record<string, string[]> = {
     '',
     '  whoami            who is this person?',
     '  cat resume.txt    quick summary',
-    '  ls projects/      list projects',
+    '  cat education.txt academic background',
     '  ls skills/        list skill categories',
-    '  cat skills/<name> cloud · devops · iac · development',
+    '  cat skills/<name> cloud · iac · platform · cicd · development',
     '  cat contact.txt   get in touch',
     '  clear             clear the terminal',
     '  exit              close this terminal',
@@ -36,22 +36,27 @@ const COMMANDS: Record<string, string[]> = {
     '  Kubernetes · Terraform · Azure AKS · AWS EKS',
     '  Helm · Nginx · Redis · RabbitMQ · CI/CD · Docker',
   ],
-  'ls projects/': [
-    '  drwxr-xr-x  unipay/       Azure AKS  — 3 environments built from scratch',
-    '  drwxr-xr-x  ticketpro/    AWS EKS    — production environment maintenance',
-    '  drwxr-xr-x  on-prem/      Docker     — multiple on-premises projects',
+  'cat education.txt': [
+    '  Bachelor of Computing (Honours) — NQF Level 8',
+    '  Belgium Campus ITversity, 2020 – 2023 · Magna Cum Laude',
+    '',
+    '  Bachelor of Commerce: Marketing Management',
+    '  North-West University, 2015 – 2018',
   ],
   'ls skills/': [
-    '  cloud/          devops/         iac/            development/',
+    '  cloud/          iac/            platform/       cicd/           development/',
   ],
   'cat skills/cloud': [
     '  AWS  ·  Azure  ·  EKS  ·  AKS  ·  VNets  ·  Subnets  ·  DNS',
   ],
-  'cat skills/devops': [
-    '  Kubernetes  ·  Docker  ·  Helm  ·  Nginx  ·  Redis  ·  RabbitMQ  ·  Bash',
-  ],
   'cat skills/iac': [
-    '  Terraform  ·  Helm  ·  Bash',
+    '  Terraform  ·  Kubernetes  ·  Helm  ·  Docker',
+  ],
+  'cat skills/platform': [
+    '  Nginx  ·  Redis  ·  RabbitMQ',
+  ],
+  'cat skills/cicd': [
+    '  CI/CD Pipelines  ·  Bash',
   ],
   'cat skills/development': [
     '  Java  ·  AngularJS  ·  TypeScript  ·  SQL',
